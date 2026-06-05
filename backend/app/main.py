@@ -5,13 +5,18 @@ from app.api.prediction_router import router
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
-
+from app.database.models import Base
+from app.database.database import engine
 from app.database.database import get_db
 from app.database.models import User
 
 app = FastAPI(
     title="AI Health Assistant"
 )
+
+@app.on_event("startup")
+def startup():
+    Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
