@@ -23,13 +23,15 @@ app.add_middleware(
     allow_origins=[
         "http://127.0.0.1:5173",
         "http://localhost:5173",
-        "https://ai-health-assistant-ebon.vercel.app"
+        "https://ai-health-assistant-ebon.vercel.app",
+        "https://ai-health-assistant-akshgondaliyas-projects.vercel.app/login"
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+print("CORS CONFIG LOADED")
 from app.api.auth_router import router as auth_router
 from app.api.user_router import (
     router as user_router
