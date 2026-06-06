@@ -24,7 +24,7 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://localhost:5173",
         "https://ai-health-assistant-ebon.vercel.app",
-        "https://ai-health-assistant-akshgondaliyas-projects.vercel.app/login"
+        "https://ai-health-assistant-akshgondaliyas-projects.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
